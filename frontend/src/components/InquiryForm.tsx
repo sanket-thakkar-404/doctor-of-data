@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import axios from 'axios'
 import { Send, ShieldCheck, Lock, Clock, CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
 
 const serviceOptions = [
@@ -50,13 +51,76 @@ const companySizeOptions = [
 ];
 
 const InquiryForm = () => {
-  const [ndaRequested, setNdaRequested] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+const [error, setError] = useState<string | null>(null);
+  const [formData , setFormData] = useState({
+    fullname:"",
+    companyName :"",
+    email :"",
+    phone:"",
+    businessType :"",
+    companySize :"",
+    serviceRequired:"",
+    timeline:"",
+    description:"",
+    requestNonDisclosure: false,
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+) => {
+  const { name, type, value } = e.target;
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]:
+      type === "checkbox"
+        ? (e.target as HTMLInputElement).checked
+        : value,
+  }));
+};
+
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+
+  try {
+    await axios.post(
+      "https://formspree.io/f/xjgeznnv",
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+
     setSubmitted(true);
-  };
+    setFormData({
+      fullname: "",
+      companyName: "",
+      email: "",
+      phone: "",
+      businessType: "",
+      companySize: "",
+      serviceRequired: "",
+      timeline: "",
+      description: "",
+      requestNonDisclosure: false,
+    });
+
+  } catch (err) {
+    setError(
+      err.response?.data?.errors?.[0]?.message ||
+      "Submission failed."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   if (submitted) {
     return (
@@ -172,24 +236,24 @@ const InquiryForm = () => {
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label className={labelClass}>Full Name *</label>
-                  <input type="text" required placeholder="John Mitchell" className={inputClass} />
+                  <input type="text" name="fullname" value={formData.fullname} onChange={handleChange} required placeholder="John Mitchell" className={inputClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Company Name *</label>
-                  <input type="text" required placeholder="Acme Industries" className={inputClass} />
+                  <input onChange={handleChange} type="text" name="companyName" value={formData.companyName} required placeholder="Acme Industries" className={inputClass} />
                 </div>
                   <div>
                   <label className={labelClass}>Email Address *</label>
-                  <input type="email" required placeholder="john@acme.com" className={inputClass} />
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@acme.com" className={inputClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Phone Number</label>
-                  <input type="tel" placeholder="+1 (555) 000-0000" className={inputClass} />
+                  <input onChange={handleChange} type="number" name="phone" value={formData.phone} placeholder="+1 (555) 000-0000" className={inputClass} />
                 </div>
                 {/* business type */}
                <div>
                   <label className={labelClass}> Business Type *</label>
-                  <select required className={selectClass} defaultValue="">
+                  <select name="businessType" onChange={handleChange} value={formData.businessType} required className={selectClass} defaultValue="">
                     <option value="" disabled>Select company size</option>
                     {businessType.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
@@ -198,7 +262,7 @@ const InquiryForm = () => {
                 </div>
                 <div>
                   <label className={labelClass}>Company Size *</label>
-                  <select required className={selectClass} defaultValue="">
+                  <select name="companySize" onChange={handleChange} value={formData.companySize} required className={selectClass} defaultValue="">
                     <option value="" disabled>Select company size</option>
                     {companySizeOptions.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
@@ -207,7 +271,7 @@ const InquiryForm = () => {
                 </div>
                 <div className="">
                   <label className={labelClass}>Service Required *</label>
-                  <select required className={selectClass} defaultValue="">
+                  <select onChange={handleChange} name="serviceRequired" value={formData.serviceRequired} required className={selectClass} defaultValue="">
                     <option value="" disabled>Select service</option>
                     {serviceOptions.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
@@ -216,7 +280,7 @@ const InquiryForm = () => {
                 </div>
                 <div className="">
                   <label className={labelClass}>Timeline</label>
-                  <select className={selectClass} defaultValue="">
+                  <select onChange={handleChange} name="timeline" value={formData.timeline} className={selectClass} defaultValue="">
                     <option value="" disabled>Select timeline</option>
                     {timelineOptions.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
@@ -228,6 +292,8 @@ const InquiryForm = () => {
                   <textarea
                     required
                     rows={5}
+                    onChange={handleChange}
+                    name="description" value={formData.description}
                     placeholder="Describe your project requirements, current challenges, and desired outcomes..."
                     className={inputClass + " resize-none"}
                   />
@@ -236,8 +302,9 @@ const InquiryForm = () => {
                   <label className="flex items-center gap-3 cursor-pointer group p-3 rounded-lg hover:bg-surface transition-colors">
                     <input
                       type="checkbox"
-                      checked={ndaRequested}
-                      onChange={(e) => setNdaRequested(e.target.checked)}
+                      checked={formData.requestNonDisclosure}
+                      name="requestNonDisclosure"
+                      onChange={handleChange}
                       className="w-4 h-4 rounded border-border bg-muted text-primary focus:ring-ring"
                     />
                     <div>
@@ -272,5 +339,4 @@ const InquiryForm = () => {
     </section>
   );
 };
-
 export default InquiryForm;
