@@ -81,7 +81,7 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold font-display mb-5">Contact</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>contact@nexuscore.io</li>
+              <li>contact@doctorofdata.io</li>
               <li>+91 79994-28556 </li>
               <li>Enterprise District, Suite 400</li>
               <li>Raipur chattisgarh , 492001</li>
