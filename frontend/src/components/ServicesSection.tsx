@@ -1,52 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  Database, BarChart3, Cloud, Smartphone, BrainCircuit, Bot,
-  Settings2, LineChart, Server, Globe, Layers, Lock, ArrowRight,
-} from "lucide-react";
+import {categories} from '../data/data.js'
+import { ArrowRight } from "lucide-react";
 
-const categories = [
-  {
-    title: "Enterprise Data Systems",
-    description: "Centralized, scalable data architectures that become your operational backbone.",
-    detail: "From legacy system migration to greenfield MIS platforms, we design data architectures that handle billions of records with sub-second query times.",
-    services: [
-      { icon: Database, name: "Advanced MIS Development", desc: "Custom management information systems with real-time reporting" },
-      { icon: Settings2, name: "Custom Data Management", desc: "End-to-end data lifecycle management and governance" },
-      { icon: Layers, name: "Complete MIS Outsourcing", desc: "Fully managed MIS operations with dedicated teams" },
-    ],
-  },
-  {
-    title: "Business Intelligence & Automation",
-    description: "Transform raw data into actionable intelligence. Automate what slows you down.",
-    detail: "Our BI solutions reduce reporting time by 80% and give leadership instant access to KPIs that actually drive growth.",
-    services: [
-      { icon: BarChart3, name: "Dashboard Automation", desc: "Live dashboards that update in real-time across all departments" },
-      { icon: LineChart, name: "Process Automation Systems", desc: "RPA and workflow automation that eliminates manual bottlenecks" },
-      { icon: BrainCircuit, name: "Data Analytics & Insights", desc: "Predictive analytics and ML-powered business intelligence" },
-    ],
-  },
-  {
-    title: "Digital Infrastructure",
-    description: "Secure, cloud-native infrastructure engineered for enterprise performance.",
-    detail: "We architect infrastructure that scales from 100 to 1M+ users without re-engineering, with 99.99% uptime guarantees.",
-    services: [
-      { icon: Cloud, name: "Cloud Integration", desc: "Multi-cloud strategy and migration with zero downtime" },
-      { icon: Server, name: "ERP Automation", desc: "ERP modernization and intelligent process automation" },
-      { icon: Lock, name: "Secure Infrastructure Setup", desc: "Zero-trust architecture with SOC 2 compliance" },
-    ],
-  },
-  {
-    title: "Smart Applications",
-    description: "Intelligent applications that adapt, learn, and scale with your business.",
-    detail: "We build applications that aren't just functional—they learn from usage patterns and optimize themselves over time.",
-    services: [
-      { icon: Globe, name: "Web & App Development", desc: "Enterprise-grade web and mobile applications" },
-      { icon: Smartphone, name: "AI Integration Solutions", desc: "GPT, computer vision, and NLP integration into existing systems" },
-      { icon: Bot, name: "Business Chatbot Systems", desc: "Intelligent chatbots that handle 70% of customer queries" },
-    ],
-  },
-];
 
 const ServicesSection = () => {
   return (

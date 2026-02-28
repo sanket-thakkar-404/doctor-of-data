@@ -2,14 +2,8 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import {navItems} from "../data/navlinks.js"
 
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Why Us", href: "/why-us" },
-  { label: "Results", href: "/results" },
-  { label: "Process", href: "/process" },
-];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +41,7 @@ const Navbar = () => {
             <Link
               key={item.label}
               to={item.href}
-              className={`text-sm transition-colors duration-200 ${
+              className={`text-sm transition-colors duration-200 whitespace-nowrap ${
                 location.pathname === item.href
                   ? "text-foreground font-medium"
                   : "text-muted-foreground hover:text-foreground"

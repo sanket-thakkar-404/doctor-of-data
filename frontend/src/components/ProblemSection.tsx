@@ -1,41 +1,8 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, Eye, Cog, Unplug, TrendingDown, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
+import {pains} from "../data/data.js"
 
-const pains = [
-  {
-    icon: AlertTriangle,
-    title: "Manual Reporting",
-    stat: "23 hrs/week",
-    statLabel: "wasted on manual data compilation",
-    description: "Hours wasted compiling spreadsheets. Decisions delayed by outdated data. Your team operates on yesterday's numbers while competitors act on real-time insights.",
-    color: "destructive",
-  },
-  {
-    icon: Eye,
-    title: "Lack of Data Visibility",
-    stat: "67%",
-    statLabel: "of leaders lack real-time data access",
-    description: "Critical metrics buried across disconnected tools. No single source of truth. Leadership flies blind on performance, missing revenue opportunities daily.",
-    color: "primary",
-  },
-  {
-    icon: Cog,
-    title: "Process Inefficiency",
-    stat: "40%",
-    statLabel: "of tasks are repetitive & automatable",
-    description: "Repetitive tasks consuming skilled resources. Error-prone workflows draining productivity. Without automation, scaling becomes exponentially harder.",
-    color: "accent",
-  },
-  {
-    icon: Unplug,
-    title: "Disconnected Systems",
-    stat: "12+",
-    statLabel: "average tools per enterprise team",
-    description: "Siloed departments, fragmented data. Integration gaps create compliance risks, duplicate efforts, and operational bottlenecks that compound over time.",
-    color: "primary",
-  },
-];
+
 
 const ProblemSection = () => {
   return (

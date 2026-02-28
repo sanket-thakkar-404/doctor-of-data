@@ -1,43 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Rajesh Sharma",
-    role: "CTO, TechVista Solutions",
-    content:
-      "Doctor of Data ne humari poori data infrastructure ko transform kar diya. Ab hum 10x faster decisions le rahe hain real-time analytics ke saath.",
-    rating: 5,
-  },
-  {
-    name: "Priya Mehta",
-    role: "VP Engineering, CloudNine Systems",
-    content:
-      "Unki team ne humara legacy system modernize kiya aur cloud migration seamless tha. Downtime zero aur performance 3x better.",
-    rating: 5,
-  },
-  {
-    name: "Amit Patel",
-    role: "CEO, DataDriven Corp",
-    content:
-      "Enterprise-grade solutions at startup speed. Doctor of Data ki consulting ne humari revenue growth 40% increase kiya within 6 months.",
-    rating: 5,
-  },
-  {
-    name: "Sneha Verma",
-    role: "Director of Operations, ScaleUp Inc",
-    content:
-      "Best data consulting firm we've worked with. Their BI dashboards gave us complete visibility into our operations for the first time.",
-    rating: 5,
-  },
-  {
-    name: "Vikram Singh",
-    role: "Founder, NextGen Analytics",
-    content:
-      "Professional, reliable, and incredibly skilled. They delivered our entire data pipeline ahead of schedule with exceptional quality.",
-    rating: 5,
-  },
-];
+import {testimonials} from '../data/data.js'
 
 const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);

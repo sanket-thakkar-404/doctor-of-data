@@ -1,49 +1,8 @@
 import { motion } from "framer-motion";
-import { Search, Target, Code2, Rocket, TrendingUp, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {steps} from "../data/data.js"
 
-const steps = [
-  {
-    icon: Search,
-    phase: "01",
-    title: "Discovery",
-    description: "Deep-dive into your operations, data flows, pain points, and strategic objectives.",
-    details: ["Stakeholder interviews", "Systems audit", "Pain point mapping", "Goals alignment"],
-    duration: "1-2 weeks",
-  },
-  {
-    icon: Target,
-    phase: "02",
-    title: "Strategy",
-    description: "Architecture blueprint, technology selection, and roadmap aligned to business outcomes.",
-    details: ["Technical architecture", "Technology selection", "Timeline & milestones", "ROI projection"],
-    duration: "1-2 weeks",
-  },
-  {
-    icon: Code2,
-    phase: "03",
-    title: "Development",
-    description: "Agile development with continuous stakeholder alignment and quality assurance.",
-    details: ["Sprint-based delivery", "Weekly demos", "Continuous testing", "Documentation"],
-    duration: "4-12 weeks",
-  },
-  {
-    icon: Rocket,
-    phase: "04",
-    title: "Deployment",
-    description: "Staged rollout with zero-downtime migration, training, and change management.",
-    details: ["Staged rollout", "Data migration", "Team training", "Go-live support"],
-    duration: "1-2 weeks",
-  },
-  {
-    icon: TrendingUp,
-    phase: "05",
-    title: "Optimization",
-    description: "Ongoing monitoring, performance tuning, and iterative improvements.",
-    details: ["Performance monitoring", "Usage analytics", "Iterative improvements", "Quarterly reviews"],
-    duration: "Ongoing",
-  },
-];
 
 const ProcessSection = () => {
   return (

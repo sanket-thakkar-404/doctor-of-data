@@ -1,34 +1,7 @@
 import { motion } from "framer-motion";
 import AnimatedCounter from "./AnimatedCounter";
-import { TrendingUp, Users, Clock, Database, Award, Globe } from "lucide-react";
+import {metrics,caseStudies} from "../data/data.js"
 
-const metrics = [
-  { icon: Users, value: 150, suffix: "+", label: "Enterprise Clients", description: "Across manufacturing, education, finance, and logistics" },
-  { icon: Clock, value: 99, suffix: ".9%", label: "System Uptime", description: "Mission-critical reliability backed by SLA" },
-  { icon: TrendingUp, value: 40, suffix: "%", label: "Efficiency Gain", description: "Average operational cost reduction achieved" },
-  { icon: Database, value: 3, suffix: ".2M+", label: "Data Points Daily", description: "Processed and analyzed in real-time" },
-];
-
-const caseStudies = [
-  {
-    industry: "Manufacturing",
-    title: "Automated production reporting across 12 facilities",
-    result: "67% reduction in reporting time",
-    tags: ["MIS", "Automation", "Dashboard"],
-  },
-  {
-    industry: "Education",
-    title: "Unified student data platform for 50K+ students",
-    result: "3x faster administrative processing",
-    tags: ["Data Systems", "Cloud", "Analytics"],
-  },
-  {
-    industry: "Financial Services",
-    title: "Real-time compliance monitoring dashboard",
-    result: "Zero compliance violations in 18 months",
-    tags: ["BI", "Security", "Real-time"],
-  },
-];
 
 const MetricsSection = () => {
   return (
