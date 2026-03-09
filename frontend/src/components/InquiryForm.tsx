@@ -88,7 +88,7 @@ const [error, setError] = useState<string | null>(null);
 
   try {
     await axios.post(
-      "https://formspree.io/f/xjgeznnv",
+      "https://formspree.io/f/xyknkwpq",
       formData,
       {
         headers: {
@@ -193,7 +193,7 @@ const [error, setError] = useState<string | null>(null);
             {/* Contact info */}
             <div className="space-y-4">
               {[
-                { icon: Mail, label: "contact@doctorofdata.io" },
+                { icon: Mail, label: "drofdatasolution@gmail.com" },
                 { icon: Phone, label: "+91 7999428556 " },
                 { icon: MapPin, label: "Raipur Chattisgarh , 492009" },
               ].map((item) => (
@@ -326,12 +326,27 @@ const [error, setError] = useState<string | null>(null);
                 </p>
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all glow-sm w-full sm:w-auto justify-center"
+                  disabled={loading}
+                  className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all glow-sm w-full sm:w-auto justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Submit Inquiry
-                  <Send size={16} className="group-hover:translate-x-1 transition-transform" />
+                  {loading ? (
+                    <>
+                      <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Inquiry
+                      <Send size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </button>
               </div>
+              {error && (
+                <div className="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm">
+                  {error}
+                </div>
+              )}
             </form>
           </motion.div>
         </div>

@@ -46,14 +46,14 @@ const TestimonialsSection = () => {
             <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 max-w-2xl">
               "{testimonials[current].content}"
             </p>
-            <div>
+            {/* <div>
               <p className="font-display font-semibold text-foreground">
                 {testimonials[current].name}
               </p>
               <p className="text-sm text-muted-foreground">
                 {testimonials[current].role}
               </p>
-            </div>
+            </div> */}
           </div>
 
           {/* Navigation buttons */}
