@@ -1,8 +1,8 @@
 import {
   Database, BarChart3, Cloud, Smartphone, BrainCircuit, Bot,
-  Settings2, LineChart, Server, Globe, Layers, Lock, Search, Target, Code2, Rocket, TrendingUp,AlertTriangle, Eye, Cog, Unplug,Users, Clock,
+  Settings2, LineChart, Server, Globe, Layers, Lock, Search, Target, Code2, Rocket, TrendingUp, AlertTriangle, Eye, Cog, Unplug, Users, Clock,
 } from "lucide-react";
-import { Linkedin,  Mail, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Mail, Instagram, Facebook } from "lucide-react";
 
 export const testimonials = [
   {
@@ -197,8 +197,8 @@ export const caseStudies = [
 
 
 export const socialLinks = [
-  { id:1,icon: Linkedin, url: "www.linkedin.com/in/doctor-of-data-79b1883b3" },
-  { id:2,icon: Instagram, url: "https://www.instagram.com/dr.of.data?igsh=cXJ5eXU0dWpiOHpn" },
-  { id:3,icon: Facebook, url: "https://facebook.com/yourusername" },
-  { id:4,icon: Mail, url: "drofdatasolution@gmail.com" },
+  { id: 1, icon: Linkedin, url: "https://www.linkedin.com/in/doctor-of-data-79b1883b3" },
+  { id: 2, icon: Instagram, url: "https://www.instagram.com/dr.of.data?igsh=cXJ5eXU0dWpiOHpn" },
+  { id: 3, icon: Facebook, url: "https://www.facebook.com/profile.php?id=61588651717544" },
+  { id: 4, icon: Mail, url: "mailto:drofdatasolution@gmail.com" },
 ];

@@ -54,7 +54,7 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
-                to="/contact"
+                to="/schedule"
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all glow-sm"
               >
                 Book Strategy Call
@@ -72,7 +72,7 @@ const HeroSection = () => {
             {/* Trust bar */}
             <div className="flex flex-wrap gap-6">
               {[
-                { label: "Enterprise Clients", value: "150+" },
+                { label: "Enterprise Solutions", value: "150+" },
                 { label: "Uptime SLA", value: "99.9%" },
                 { label: "SOC 2 Compliant", value: "✓" },
               ].map((item) => (

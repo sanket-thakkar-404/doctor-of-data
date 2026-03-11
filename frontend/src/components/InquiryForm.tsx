@@ -194,7 +194,7 @@ const [error, setError] = useState<string | null>(null);
             <div className="space-y-4">
               {[
                 { icon: Mail, label: "drofdatasolution@gmail.com" },
-                { icon: Phone, label: "+91 7999428556 " },
+                { icon: Phone, label: "+91 7770807569 " },
                 { icon: MapPin, label: "Raipur Chattisgarh , 492009" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3 text-sm text-muted-foreground">

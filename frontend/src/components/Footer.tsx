@@ -15,7 +15,7 @@ const Footer = () => {
             Ready to Take <span className="text-gradient">Control</span>?
           </h3>
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-            Join 150+ Enterprises Solution that transformed their operations with data-driven systems.
+            Join 150+ Enterprises Solution that transformed operations with data-driven systems.
           </p>
           <Link
             to="/schedule"
@@ -35,29 +35,31 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               Enterprise technology consulting. Scalable data systems. Complete operational control.
             </p>
-            <div className="flex gap-3">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.url}
-                  className="w-10 h-10 rounded-lg glass glass-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-glow/30 transition-all"
-                >
-                  <link.icon size={16} />
-                </a>
-              ))}
-            </div>
+         <div className="flex gap-3">
+  {socialLinks.map((link) => (
+    <a
+      href={link.url}
+      key={link.id}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 rounded-lg glass glass-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-glow/30 transition-all"
+    >
+      <link.icon size={16} />
+    </a>
+  ))}
+</div>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold font-display mb-5">Services</h4>
+            <Link to={"/services"} className="text-sm block font-semibold font-display mb-5">Services</Link>
             <ul className="space-y-3">
               {["Enterprise Data Systems", "Business Intelligence", "Digital Infrastructure", "Smart Applications"].map(
                 (item) => (
                   <li key={item}>
-                    <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <p className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {item}
-                    </Link>
+                    </p>
                   </li>
                 )
               )}
@@ -85,7 +87,7 @@ const Footer = () => {
             <h4 className="text-sm font-semibold font-display mb-5">Contact</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>drofdatasolution@gmail.com</li>
-              <li>+91 79994-28556 </li>
+              <li>+91 77708-07569 </li>
               <li>Raipur chattisgarh , 492001</li>
             </ul>
           </div>
